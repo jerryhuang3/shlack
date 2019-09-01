@@ -17,8 +17,6 @@ export default class LoginFormComponent extends Component {
 		return !this.userId;
 	}
 
-
-
   /**
    *
    * @param {Event & {target: HTMLFormElement}} evt
