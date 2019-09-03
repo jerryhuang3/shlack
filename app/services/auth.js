@@ -7,28 +7,28 @@ import CookiesService from 'ember-cookies/services/cookies';
 const AUTH_KEY = 'shlack-userid';
 
 export default class AuthService extends Service {
-	/**
-	 * @type {Router}
-	 */
-	@service router;
+  /**
+   * @type {Router}
+   */
+  @service router;
 
-	/**
-	 * @type {CookiesService}
-	 */
-	@service cookies;
+  /**
+   * @type {CookiesService}
+   */
+  @service cookies;
 
   get currentUserId() {
     return this.cookies.read(AUTH_KEY);
   }
 
-  loginWithUserId(userId) {
-		this.cookies.write(AUTH_KEY, userId);
-		this.router.transitionTo('teams');
-	}
-	
-	@action
-	logout() {
-		this.cookies.write(AUTH_KEY, null);
-		this.router.transitionTo('login')
-	}
+  async loginWithUserId(userId) {
+    this.cookies.write(AUTH_KEY, userId);
+    this.router.transitionTo('teams');
+  }
+
+  @action
+  logout() {
+    this.cookies.write(AUTH_KEY, null);
+    this.router.transitionTo('login');
+  }
 }

@@ -7,15 +7,15 @@ import AuthService from 'shlack/services/auth';
 export default class LoginFormComponent extends Component {
   @tracked
   userId = null;
-  
+
   /**
    * @type {AuthService}
    */
   @service auth;
-	
-	get isDisabled() {
-		return !this.userId;
-	}
+
+  get isDisabled() {
+    return !this.userId;
+  }
 
   /**
    *

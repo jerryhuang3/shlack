@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import AuthService from '../services/auth';
 
 export default class LoginRoute extends Route {
-	/**
+  /**
    * @type {AuthService}
    */
   @service auth;
